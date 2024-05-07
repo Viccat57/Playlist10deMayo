@@ -1,0 +1,7 @@
+#playlist {
+    list-style: none;
+    padding: 0;
+  }
+  #playlist li {
+    cursor: pointer;
+  }

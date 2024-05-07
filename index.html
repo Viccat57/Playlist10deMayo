@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor de Música</title>
+<style>
+  #playlist {
+    list-style: none;
+    padding: 0;
+  }
+  #playlist li {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<audio id="audio" controls autoplay></audio>
+<ul id="playlist">
+  <li data-src="I-GOT-YOU.mp3">I-GOT-YOU</li>
+  <li data-src="runforroses.mp3">run for roses</li>
+</ul>
+
+<script>
+  const playlist = document.getElementById('playlist');
+  const audio = document.getElementById('audio');
+
+  playlist.addEventListener('click', (event) => {
+    if (event.target.tagName === 'LI') {
+      const song = event.target.getAttribute('data-src');
+      audio.src = song;
+      audio.play();
+    }
+  });
+</script>
+</body>
+</html>
